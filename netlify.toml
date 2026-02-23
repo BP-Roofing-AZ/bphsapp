@@ -1,0 +1,13 @@
+[build]
+  publish = "frontend"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+// touched by v1.128
+
+// touched by v1.139
+
+// touched by v1.140

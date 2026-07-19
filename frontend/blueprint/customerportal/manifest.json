@@ -1,0 +1,3 @@
+{ "name": "Customer Portal", "short_name": "Portal", "start_url": "/blueprint/customerportal/", "display": "standalone" }
+
+// touched by v5.156

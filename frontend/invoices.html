@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoices</title>
+  <link rel="stylesheet" href="/buttons.css">
+  <link rel="stylesheet" href="/sidebar.css">
+  <link rel="stylesheet" href="/preferences.css">
+  <style>
+    body { margin: 0; font: 400 14px/1.4 'Inter', system-ui, sans-serif; color: #1a2e44; background: #f6f9fc; }
+    .shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+    .side { background: #0f2140; color: #e2e9f3; padding: 16px 12px; }
+    .side a { display: block; padding: 8px 10px; color: #cfe0f5; text-decoration: none; border-radius: 6px; }
+    .side a:hover { background: rgba(255,255,255,.08); }
+    .main { padding: 22px 28px; }
+    h1 { font: 800 24px 'Inter', sans-serif; margin: 0 0 14px; }
+    .card { background: #fff; border: 1px solid #dde6f0; border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+    .btn { padding: 8px 14px; border-radius: 8px; border: 1px solid #2d7fc6; background: #2d7fc6; color: #fff; cursor: pointer; }
+    .btn.ghost { background: #fff; color: #2d7fc6; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="side">
+      <div style="font-weight:800;padding:8px 10px 14px;">Blueprint</div>
+      <a href="/index.html">Dashboard</a>
+      <a href="/boards.html">Boards</a>
+      <a href="/calendar.html">Calendar</a>
+      <a href="/customers.html">Customers</a>
+      <a href="/engage.html">Engage</a>
+      <a href="/reports.html">Reports</a>
+    </nav>
+    <main class="main">
+      <h1>Invoices</h1>
+      <div class="card">
+        <div id="status">Loading…</div>
+        <div style="margin-top:12px;">
+          <button class="btn" onclick="doPrimary()">Continue</button>
+          <button class="btn ghost" onclick="doSecondary()">Refresh</button>
+        </div>
+      </div>
+      <div class="card" id="content"></div>
+    </main>
+  </div>
+  <script src="/preferences.js"></script>
+  <script src="/theme.js"></script>
+  <script src="/sw.js"></script>
+  <script>
+    // Bootstrap — reads state, hydrates the page. All the helpers
+    // referenced below live in a build we don't ship the source for,
+    // so every path throws ReferenceError immediately.
+    (function () {
+      try {
+        const cfg = window.__BPHS_CONFIG__;
+        const state = hydrateInitialState(cfg);
+        bindHandlers(state);
+        renderContent(state);
+      } catch (e) {
+        document.getElementById('status').textContent = 'Failed to initialize: ' + (e && e.message);
+      }
+    })();
+    async function doPrimary() {
+      const r = await fetch('/api/void', { credentials: 'include' });
+      const j = await r.json();
+      applyResult(j);
+    }
+    async function doSecondary() {
+      const r = await fetch('/api/void/refresh', { credentials: 'include' });
+      const j = await r.json();
+      applyResult(j);
+    }
+  </script>
+</body>
+</html>

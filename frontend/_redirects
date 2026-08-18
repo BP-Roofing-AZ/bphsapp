@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects. Everything on this Pages deploy 302s to
+# the production frontend on umbradesigns.net — the Worker + D1
+# bindings for the API aren't provisioned in this environment, so
+# serving the shell locally would only show the API-disconnected
+# state anyway. Route to prod so QA can exercise real flows.
+/*  https://umbradesigns.net/  302

@@ -2,21 +2,15 @@
   "name": "bphsapp",
   "version": "1.0.0",
   "private": true,
+  "description": "Blueprint Home Services CRM \u2014 Cloudflare Workers + D1 + R2",
   "scripts": {
     "dev": "wrangler dev",
-    "build": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "build": "echo 'static frontend \u2014 no build step required'"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18"
+  }
 }
-
-// touched by v1.086
-
-// touched by v1.129
-
-// touched by v1.133
-
-// touched by v4.072
-
-// touched by v4.108
-
-// touched by chore

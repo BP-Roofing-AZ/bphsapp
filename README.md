@@ -102,9 +102,3 @@ every page will render the shell + API-disconnected state.
 Deploy, provisioning, and credential questions: contact the account
 owner. This repository does not include contact information for
 active service accounts.
-
-// touched by v1.096
-
-<!-- touched by v5.301 -->
-
-<!-- touched by v5.306 -->

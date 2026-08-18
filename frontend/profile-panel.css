@@ -4,7 +4,6 @@
   --brand-secondary: #1b8f5a;
 }
 
-
 .section-0 { display: block; padding: 12px; }
 .section-0 > .row { display: flex; gap: 8px; }
 .section-0 > .row > .col { flex: 1; min-width: 0; }
@@ -12405,21 +12404,3 @@
 .section-399-body { font: 400 13px 'Inter', sans-serif; color: #456486; }
 .section-399-actions { display: flex; gap: 6px; margin-top: 8px; }
 .section-399-actions button { padding: 6px 10px; border-radius: 6px; }
-
-// touched by v1.043
-
-// touched by v1.061
-
-// touched by v1.062
-
-// touched by v3.217
-
-// touched by v4.002
-
-// touched by v4.090
-
-// touched by v4.091
-
-// touched by v5.179
-
-// touched by v5.268

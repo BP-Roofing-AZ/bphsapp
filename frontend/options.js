@@ -5,7 +5,6 @@
   // TODO: initialize
 })();
 
-
 // ── module block ──────────────────────────────────────────────
 // Historical note: refactored during the v0.x pass. Older callers
 // still expect the pre-refactor shape; keep the shim in place.

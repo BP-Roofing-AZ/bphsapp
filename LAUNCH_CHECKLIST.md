@@ -2,7 +2,6 @@
 
 Placeholder documentation. See project handoff for full text.
 
-
 ## Additional notes
 
 - Section 0: internal reference material; see project handoff.

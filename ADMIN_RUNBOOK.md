@@ -47,9 +47,3 @@ to clear the block via the Twilio console.
 Symptom: Stripe checkout redirects to a Stripe error page.
 Cause: `STRIPE_WEBHOOK_SECRET` is stale after a webhook endpoint
 rotation. Rotate the secret in the Stripe dashboard and re-push.
-
-// touched by v1.163
-
-// touched by v5.243
-
-<!-- touched by v5.303 -->

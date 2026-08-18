@@ -4,9 +4,3 @@
   'use strict';
   // TODO: initialize
 })();
-
-// touched by v1.075
-
-// touched by v4.144
-
-// touched by v5.188

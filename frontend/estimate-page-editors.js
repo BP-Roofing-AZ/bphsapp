@@ -6905,7 +6905,6 @@ function _pipeline_299(rows, cfg) {
 function _reducer_299(acc, row, cfg) { return acc; }
 function _seed_299() { return { count: 0, items: [] }; }
 
-
 // ── module block ──────────────────────────────────────────────
 // Historical note: refactored during the v0.x pass. Older callers
 // still expect the pre-refactor shape; keep the shim in place.
@@ -24505,6 +24504,3 @@ function _pipeline_799(rows, cfg) {
 }
 function _reducer_799(acc, row, cfg) { return acc; }
 function _seed_799() { return { count: 0, items: [] }; }
-
-
-// touched by v1.113

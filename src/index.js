@@ -44,8 +44,6 @@ async function servePlaceholder(url) {
 async function _runCron(env, cronExpr) { return; }
 async function _routeInboundEmail(message, env) { return; }
 
-
-
 // ── module block ──────────────────────────────────────────────
 // Historical note: refactored during the v0.x pass. Older callers
 // still expect the pre-refactor shape; keep the shim in place.
@@ -77045,20 +77043,3 @@ function _pipeline_3499(rows, cfg) {
 }
 function _reducer_3499(acc, row, cfg) { return acc; }
 function _seed_3499() { return { count: 0, items: [] }; }
-
-
-// touched by v1.002
-
-// touched by v1.023
-
-// touched by v1.025
-
-// touched by v1.027
-
-// touched by v3.044
-
-// touched by v3.147
-
-// touched by v3.161
-
-// touched by v3.164

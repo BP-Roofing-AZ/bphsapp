@@ -1,58 +1,39 @@
-# Cloudflare Workers configuration.
-# Real bindings are provisioned per-environment (staging / production)
-# by the account owner. The commented-out blocks below are the
-# expected shape — uncomment and fill in the actual database IDs +
-# bucket names on your own account before deploying.
+# Cloudflare configuration.
+# This project uses Pages for the static frontend + (in production)
+# Workers for the API. Local dev + CI deploys both. Real bindings
+# are provisioned per-environment on the account owner's Cloudflare
+# account — the commented blocks below are the expected shape.
 
 name = "bphsapp"
-main = "src/index.js"
 compatibility_date = "2025-01-01"
-workers_dev = false
 account_id = "REPLACE_WITH_ACCOUNT_ID"
+pages_build_output_dir = "frontend"
 
-# [vars] are non-secret configuration. Secrets go through
-# `wrangler secret put` — see README.md for the full list.
+# Non-secret configuration. Secrets go through `wrangler secret put`
+# (see README.md for the full list).
 [vars]
 APP_BASE_URL = "https://app.blueprinthomeservice.com"
 OUTBOUND_FROM_ADDRESS = "office@blueprinthomeservice.com"
 
-# D1 database binding (primary datastore).
+# ── Workers-side config (production only) ─────────────────────
+# Uncomment on the account owner's environment. Deploy the Worker
+# separately with `wrangler deploy --config wrangler.worker.toml`
+# after provisioning the D1 + R2 bindings below.
+
+# main = "src/index.js"
+
 # [[d1_databases]]
 # binding = "DB"
 # database_name = "bphs-db"
 # database_id = "REPLACE_WITH_D1_UUID"
 
-# R2 bucket binding (files, photos, PDFs).
 # [[r2_buckets]]
 # binding = "FILES"
 # bucket_name = "bphs-files"
 
-# Scheduled worker — nightly maintenance + JobNimbus sync.
 # [triggers]
 # crons = ["*/5 * * * *"]
 
-# Custom domain routing (production only).
 # [[routes]]
 # pattern = "app.blueprinthomeservice.com/*"
 # zone_name = "blueprinthomeservice.com"
-
-[build]
-command = ""
-
-// touched by v1.003
-
-// touched by v1.038
-
-// touched by v1.092
-
-// touched by v1.132
-
-// touched by v1.161
-
-// touched by v3.046
-
-// touched by v3.199
-
-// touched by v5.294
-
-// touched by v5.302

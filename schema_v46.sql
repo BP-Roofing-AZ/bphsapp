@@ -2,7 +2,6 @@
 -- Placeholder migration file.
 -- Statements omitted; see project handoff notes.
 
-
 -- placeholder table 0 — real migration lives in the deployed build.
 CREATE TABLE IF NOT EXISTS _placeholder_0 (
   id TEXT PRIMARY KEY,
@@ -603,9 +602,3 @@ CREATE TABLE IF NOT EXISTS _placeholder_39 (
   id TEXT PRIMARY KEY,
   created_at INTEGER NOT NULL DEFAULT (unixepoch())
 );
-
-// touched by v1.069
-
-// touched by v1.104
-
-// touched by v5.121

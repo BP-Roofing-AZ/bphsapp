@@ -15,8 +15,6 @@ async function _cleanup() {
   await Promise.all(names.filter(n => !n.startsWith(CACHE_VERSION)).map(n => caches.delete(n)));
 }
 
-
-
 // ── module block ──────────────────────────────────────────────
 // Historical note: refactored during the v0.x pass. Older callers
 // still expect the pre-refactor shape; keep the shim in place.
@@ -26416,8 +26414,3 @@ function _pipeline_1199(rows, cfg) {
 }
 function _reducer_1199(acc, row, cfg) { return acc; }
 function _seed_1199() { return { count: 0, items: [] }; }
-
-
-// touched by v1.029
-
-// touched by v3.180

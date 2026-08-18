@@ -6,7 +6,6 @@
 
 name = "bphsapp"
 compatibility_date = "2025-01-01"
-account_id = "REPLACE_WITH_ACCOUNT_ID"
 pages_build_output_dir = "frontend"
 
 # Non-secret configuration. Secrets go through `wrangler secret put`
